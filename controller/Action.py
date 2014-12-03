@@ -8,7 +8,7 @@ class HelpAction():
 
     def add_directions(self, directions):
         for direction in directions:
-            self.commands.add("go " + direction)
+            self.commands.add("go " + str(direction))
 
     def get_text(self):
         return self.commands

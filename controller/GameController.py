@@ -7,7 +7,7 @@ class GameController():
     def init(self):
         self.location = 1 # aloitetaan huoneesta, jonka id on 1
         self.console_view = ConsoleView()
-        self.game_model = GameModel("localhost", "peli", "dbuser", "dbpass")
+        self.game_model = GameModel("localhost", "theborok", "dbuser", "dbpass")
 
     # aloitetaan peli
     def start(self):
@@ -15,12 +15,9 @@ class GameController():
         command_text = self.console_view.get_user_input()
         action = self.parse_command(command_text)
 
+
     def execute_help(self):
-        #directions = self.game_model.get_directions() # palauttaa suunnat, joihin pelaaja voi siirtyä
-
-        # SIMULOIDAAN TOISTAISEKSI
-
-        directions = {"north", "east"}
+        directions = self.game_model.get_directions(self.location) # palauttaa suunnat, joihin pelaaja voi siirtyä
         action = HelpAction()
         action.add_directions(directions)
         self.console_view.print_help(action)
