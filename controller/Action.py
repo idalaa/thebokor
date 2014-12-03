@@ -4,7 +4,7 @@
 
 class HelpAction():
     def __init__(self):
-        self.commands = {"help"}
+        self.commands = {"help", "exit"}
 
     def add_directions(self, directions):
         for direction in directions:

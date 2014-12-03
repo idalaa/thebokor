@@ -24,6 +24,8 @@ class GameModel():
             options.append(row[0])
         return options
 
-    def move_to(self):
-        print("poista")
-        #update ....
+    def move_to(self, locationid, direction):
+        cur = self.db.cursor()
+        cur.execute("select toid from passage where fromid = " + str(locationid) + " and direction = '" + direction + "'")
+        new_locationid = (cur.fetchone())[0]
+        return new_locationid
