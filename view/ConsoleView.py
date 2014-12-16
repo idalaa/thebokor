@@ -1,4 +1,4 @@
-__author__ = 'idalaa'
+__author__ = 'MarPiet'
 
 class ConsoleView():
     def print_action(self, action):
@@ -9,4 +9,3 @@ class ConsoleView():
 
     def print_text(self, text):
         print(text)
-

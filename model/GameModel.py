@@ -29,3 +29,21 @@ class GameModel():
         cur.execute("select toid from passage where fromid = " + str(locationid) + " and direction = '" + direction + "'")
         new_locationid = (cur.fetchone())[0]
         return new_locationid
+
+    def get_desc(self, locationid):
+        cur = self.db.cursor()
+        cur.execute("select description from room where id = " + str(locationid))
+        desc = cur.fetchone()
+        return desc
+
+ 
+    
+        
+        
+        
+
+
+        
+
+        
+        
